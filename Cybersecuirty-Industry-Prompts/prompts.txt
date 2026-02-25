@@ -1,0 +1,41 @@
+
+Zeroshot 
+
+Prompt1- current date & time code in python 
+
+Prompt2- failed login attack detector deterct with code
+
+Prompt3- malware indicator scanner code in new file
+
+FewShot 
+
+Prompt1-
+
+subject: reset your password 
+subject: team lunch tomorrow 
+subject: verify your bank account now 
+few show prompt identify threat in above subject ?
+
+Prompt2-
+
+url:http://secure-login.xyz -> supicious 
+url:http://google.com -> safe
+url:http://verify-account.ru ->supicious.
+now https://github.com 
+identify for it code in python few shot prompts
+
+Prompt3:
+
+context:
+ userrole:admin 
+ acesstime: 10:00am 
+ location: office 
+ neytwork log: user acesed admin panel 
+ task: is this suspicious code in python context.py
+
+
+ Prompt4:
+
+ context: offcielogin :9 to 21 pm 
+ logintime: 23 hours
+ login detction code for supicuous user in python new file
