@@ -1,0 +1,2 @@
+2026-03-10 08:00:00 INFO Email sent from user@example.com to recipient@example.com
+2026-03-10 08:01:00 WARNING Suspicious email detected from attacker@example.com to victim@example.com

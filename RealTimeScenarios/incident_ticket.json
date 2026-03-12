@@ -1,0 +1,13 @@
+{
+    "incident_id": "INC-20260312063534",
+    "timestamp": "2026-03-12T06:35:34.150216",
+    "alerts": [
+        "Suspicious shared memory detected.",
+        "Unusual outbound connections detected.",
+        "Unknown processes detected."
+    ],
+    "status": "Open",
+    "priority": "High",
+    "assigned_team": "SOC Team",
+    "description": "Automated detection of suspicious activity. Immediate action required."
+}

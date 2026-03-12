@@ -1,0 +1,44 @@
+
+Create a Python SOC automation simulation project.
+
+Requirements:
+
+1. The system must process large log files (~8GB logs).
+2. Logs should include:
+   - Windows Firewall logs
+   - Linux system logs
+   - Email logs
+   - Malware process activity logs
+
+3. Implement 4 cybersecurity scenarios:
+   Scenario 1 – Windows firewall port scanning attack
+   Scenario 2 – Linux SSH brute force attack
+   Scenario 3 – Malware process creating shared memory and communicating with hidden processes
+   Scenario 4 – Data exfiltration via suspicious outbound traffic
+
+4. The pipeline should simulate a SOC workflow:
+
+Server logs arrive
+→ Python script parses logs
+→ Convert logs to pandas dataframe
+→ Apply detection rules
+→ Generate suspicious alerts
+→ Reduce alerts using SIEM-like filtering
+→ Send alerts to a GenAI module that explains the alert
+→ SOC analyst decision
+→ Create incident ticket
+→ Trigger automated response
+
+5. Implement detection rules for each scenario.
+
+6. Output should include:
+   - Alert description
+   - Severity level
+   - Recommended action
+
+7. Simulate incident automation:
+   - create incident ticket
+   - block IP
+   - isolate server
+
+Use pandas for log processing and structure the project like a mini SOC automation framework.

@@ -1,0 +1,4 @@
+Mar 10 11:22:01 server kernel: suspicious shared memory created
+Mar 10 11:22:03 server systemd: unknown process spawned
+Mar 10 11:22:04 server kernel: suspicious shared memory created
+Mar 10 11:22:05 server systemd: unknown process spawned
