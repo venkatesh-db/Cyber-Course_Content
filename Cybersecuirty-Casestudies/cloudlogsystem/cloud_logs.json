@@ -1,0 +1,20 @@
+
+[
+    {
+
+        "eventTime": "2024-06-01T12:00:00Z",
+        "eventName": "ConsoleLogin",
+        "user":"admin",
+        "sourceIPAddress": "192.168.1.1",
+        "status": "Success"
+
+    },
+    {
+        "eventTime": "2024-06-01T12:05:00Z",
+        "eventName": "DeleteBucket",
+        "user":"unknown_user",
+        "sourceIPAddress": "192.168.1.1",
+        "status": "Success"
+    }
+
+]
