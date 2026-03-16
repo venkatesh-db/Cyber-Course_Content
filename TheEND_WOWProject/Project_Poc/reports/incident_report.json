@@ -1,0 +1,6 @@
+{
+    "incident": "Brute Force Attack",
+    "ip": "192.168.1.1",
+    "attempts": 3,
+    "timestamp": "2026-03-16T17:43:40.589509"
+}

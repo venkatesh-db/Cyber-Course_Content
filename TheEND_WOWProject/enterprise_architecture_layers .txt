@@ -1,0 +1,24 @@
+
+Data Sources
+↓
+Network Security
+↓
+Log Collection
+↓
+Log Storage
+↓
+SIEM
+↓
+Threat Intelligence
+↓
+Detection & Analytics
+↓
+SOAR Automation
+↓
+Incident Management
+↓
+Threat Hunting / Forensics
+↓
+Compliance
+↓
+SOC Dashboard
