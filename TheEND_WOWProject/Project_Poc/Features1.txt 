@@ -1,0 +1,53 @@
+
+
+
+windows log case study 
+
+Eventid.  meaning id.   soc use 
+
+4624.   sucess login.    track supicious location 
+
+4625.  failed login      detect brut fruce 
+
+4688.  process created    detect malwarev execution
+
+
+multiple eventid 4625 login failures 
+from same ip ->possible brut force 
+
+
+step2 - create sample windows log 
+
+step3 - log collector 
+
+step4 - detection engine 
+
+step 5 - containment script 
+
+step 6 - incident report 
+
+step 7 - main pipeline 
+
+
+
+"" Project execution flow ""
+
+
+Windows logs 
+
+   ||
+
+ log collector.py 
+
+   ||
+   dectection engine 
+
+   ||
+   soc alert 
+
+   ||
+   containment.py 
+
+   ||
+
+   incident_report.json 
