@@ -1,0 +1,325 @@
+
+You are a Principal Cybersecurity Architect designing a production-grade SOC and Fraud Detection platform for a large financial payments company similar to Fiserv.
+
+The system processes high-volume financial transactions and API gateway traffic for banks, payment processors, and merchant services.
+
+The platform must analyze payment logs, API gateway logs, and authentication logs to detect both cybersecurity attacks and financial fraud attempts.
+
+SYSTEM CONTEXT
+
+The company processes:
+
+* Millions of payment transactions per hour
+* API requests from merchants, POS terminals, mobile banking apps, and partner banks
+* Authentication events for customers and employees
+
+Primary risks include:
+
+* Payment fraud
+* Credential stuffing
+* Account takeover
+* Card testing attacks
+* API abuse
+* Insider threats
+* Bot attacks on payment endpoints
+
+The SOC platform must automatically detect and classify incidents using rule engines, machine learning, and LLM-assisted reasoning.
+
+---
+
+FUNCTIONAL REQUIREMENTS
+
+1. LOG INGESTION PIPELINE
+
+Build a pipeline that ingests logs from:
+
+* Payment transaction systems
+* API gateways
+* WAF and firewall
+* Authentication servers
+* Merchant systems
+* Fraud detection engines
+
+Logs may include fields such as:
+
+transaction_id
+customer_id
+merchant_id
+amount
+currency
+device_id
+ip_address
+geo_location
+api_endpoint
+response_code
+
+The pipeline must:
+
+* Parse logs
+* Validate schema
+* Mask sensitive fields
+
+Sensitive fields include:
+
+PAN (card number)
+CVV
+Customer name
+Email
+Phone number
+Account number
+
+Example masking:
+
+4111111111111111 -> 4111********1111
+
+---
+
+2. EVENT NORMALIZATION
+
+Normalize logs into a common event schema:
+
+{
+event_id,
+timestamp,
+source_system,
+user_id,
+device_id,
+ip_address,
+event_type,
+transaction_amount,
+geo_location,
+api_endpoint,
+status
+}
+
+Ensure all events can be correlated across systems.
+
+---
+
+3. MACHINE LEARNING ANOMALY DETECTION
+
+Implement anomaly detection modules that detect:
+
+* unusual transaction amounts
+* unusual login geolocation
+* rapid card testing attempts
+* high API request bursts
+* abnormal merchant activity
+
+Use ML approaches such as:
+
+Isolation Forest
+Clustering
+Statistical thresholding
+
+Output anomaly score:
+
+0 – normal
+1 – suspicious
+2 – high risk
+
+---
+
+4. SIEM CORRELATION ENGINE
+
+Correlate events across multiple sources.
+
+Example correlation scenarios:
+
+Scenario 1 — Account Takeover
+
+Multiple failed logins
++
+Successful login from new country
++
+High-value transaction
+
+Scenario 2 — Card Testing Attack
+
+Hundreds of low-value transactions
+from same IP across many cards.
+
+Scenario 3 — API Abuse
+
+API gateway receiving excessive calls
+from automated scripts.
+
+Generate alert objects:
+
+{
+alert_id,
+severity,
+incident_type,
+confidence_score,
+correlated_events
+}
+
+---
+
+5. LLM PROMPT-ASSISTED INCIDENT CLASSIFICATION
+
+Use prompt-based reasoning to classify incidents.
+
+The system should determine:
+
+Cybersecurity Incident
+Financial Fraud Incident
+False Positive
+
+Example classification prompt:
+
+"Based on the following correlated events and anomaly scores,
+determine if the activity represents a cybersecurity attack,
+a payment fraud attempt, or benign behavior."
+
+The LLM should also:
+
+Reduce false positives
+Explain reasoning
+Provide recommended response actions.
+
+---
+
+6. ATTACKER BEHAVIOR MAPPING
+
+Map attacker behavior to MITRE ATT&CK techniques.
+
+Example:
+
+Credential stuffing
+Brute force login
+API exploitation
+Privilege escalation
+Fraudulent transaction chains
+
+Produce attacker timeline.
+
+---
+
+7. AUTOMATED CONTAINMENT (SOAR)
+
+If incident confidence is high, trigger automated responses:
+
+Block attacker IP
+Suspend suspicious account
+Throttle API rate
+Disable compromised merchant access
+Alert fraud operations team
+
+All automation actions must be logged.
+
+---
+
+8. INCIDENT MANAGEMENT
+
+Create incidents automatically.
+
+Incident object should contain:
+
+incident_id
+incident_type
+severity
+affected_users
+affected_merchants
+financial_risk_estimate
+timeline_of_events
+
+Support escalation workflow:
+
+SOC Level 1
+SOC Level 2
+Fraud Investigation Team
+
+---
+
+9. REPORT GENERATION
+
+The platform must automatically generate:
+
+A. SOC Investigation Report
+
+Include:
+
+Incident timeline
+Evidence
+Correlated logs
+Risk assessment
+Recommended response
+
+B. Executive Summary
+
+Summarize:
+
+Business impact
+Financial risk
+Affected customers
+Response status
+
+C. Compliance Appendix
+
+Provide audit-ready documentation for:
+
+PCI-DSS
+SOC2
+ISO 27001
+GDPR
+
+---
+
+10. PROJECT STRUCTURE
+
+enterprise_soc_platform/
+
+data_sources/
+payment_logs/
+api_gateway_logs/
+auth_logs/
+
+log_ingestion/
+log_collector.py
+parser.py
+masker.py
+normalizer.py
+
+detection_engine/
+anomaly_detection.py
+fraud_detection_rules.py
+correlation_engine.py
+
+siem/
+alert_generator.py
+event_correlator.py
+
+threat_intelligence/
+ip_reputation.py
+bot_detection.py
+
+incident_management/
+incident_manager.py
+case_tracker.py
+
+automation/
+playbooks/
+block_ip.py
+suspend_account.py
+notify_fraud_team.py
+
+dashboards/
+fraud_summary.json
+soc_alerts.json
+
+---
+
+CODE REQUIREMENTS
+
+Language: Python
+
+Architecture:
+
+Modular
+Production-ready
+Logging enabled
+Extensible rule engine
+JSON based log processing
+
+The code should simulate realistic payment fraud scenarios and demonstrate detection, classification, and automated response.
