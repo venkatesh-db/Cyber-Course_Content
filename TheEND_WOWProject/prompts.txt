@@ -1,0 +1,88 @@
+https://chatgpt.com/share/69b91759-9bcc-8002-81bd-1a6b1acce64e
+
+
+
+
+You are a senior cybersecurity architect designing an Enterprise SOC platform similar to what banks and large enterprises use.
+
+System requirements:
+
+Build a modular Python based SOC platform with the following components:
+
+1. Log ingestion pipeline
+
+* Ingest logs from firewall, IDS, EDR, VPN, and application servers
+* Parse and normalize logs into a unified JSON format
+* Support simulated log streaming
+
+2. Detection engine
+
+* Implement detection rules for
+
+  * SSH brute force attacks
+  * Port scanning
+  * Suspicious login patterns
+* Rules should trigger alerts based on thresholds and correlation
+
+3. SIEM module
+
+* Correlate events across multiple log sources
+* Generate alerts with severity levels
+* Enrich alerts with threat intelligence
+
+4. Threat intelligence
+
+* Integrate IP reputation checking
+* Flag known malicious IP addresses
+
+5. Incident management
+
+* Automatically create incidents when alerts occur
+* Track incidents with status and timestamps
+
+6. SOAR automation
+
+* Implement automated response playbooks
+* Example playbooks:
+
+  * Block attacker IP in firewall
+  * Notify SOC analysts
+  * Isolate compromised host
+
+7. Dashboard data
+
+* Generate summary statistics for attacks
+* Provide JSON outputs suitable for dashboards
+
+8. Project structure
+
+enterprise_soc_platform/
+data_sources/
+log_ingestion/
+detection_engine/
+siem/
+threat_intelligence/
+incident_management/
+automation/
+dashboards/
+
+Code requirements:
+
+* Use Python
+* Use modular architecture
+* Use logging
+* Use JSON based log processing
+* Include example firewall logs
+* Demonstrate a brute force attack detection workflow
+
+Add the following enterprise components:
+
+• Use Kafka for log streaming
+• Store logs in Elasticsearch
+• Implement rule engine using YAML based detection rules
+• Provide API for querying historical events
+• Use structured logging
+• Add unit tests
+• Implement correlation windows
+
+Generate production quality code with comments and modular design.
